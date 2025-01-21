@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2b2b2b; /* Dark background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            }
+         
+        .container {
+            background-color: #353535; /* Darker container background color */
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Lighter box shadow */
+            width: 300px;
+        }
+        input[type="text"], input[type="password"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #444; /* Darker border color */
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #eee; /* Light font color */
+            background-color: #444; /* Darker background color for inputs */
+        }
+        input[type="submit"] {
+            background-color: #483D8B;
+            color: white;
+            margin: 4px 2px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4682B4;
+        }
+        label {
+            color: #eee; /* Light font color for labels */
+        }
+         .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+	
+    <div class="container">
+        <h2 style="color: #eee;">Welcome!</h2> <!-- Light font color for heading -->
+        
+        <form method="post" id="login-form" action="login.jsp">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Your username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Your password" required>
+
+			<div class="button-container">
+            	<input type="submit" value="Sign In" id="login-form-submit">
+            </div>
+        </form>
+        
+        <div>
+			<h5 style="color: #eee">Don't have an account? <a href="register.jsp"> Register now </a></p>
+		</div>
+    	
+    	
+    </div>
+    
+</body>
+</html>

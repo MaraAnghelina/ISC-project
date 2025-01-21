@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate QR Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2b2b2b; 
+            color: #eee; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #353535; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
+            text-align: center;
+        }
+        #qr-code {
+            margin-top: 20px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 6px;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: white;
+            background-color: #483D8B; 
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4682B4; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+     	<form action="homepage.jsp">
+	        <h2>QR Code Generated</h2>
+	        
+	        <canvas id="qr-code"></canvas>
+	        <p id="code-display"></p>
+	    
+	    	<input type="submit" name="submit" value="Finish">
+    	</form>
+    </div>
+
+    <!-- Include qrious library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        function generateRandomCode() {
+            return Math.floor(1000 + Math.random() * 9000).toString();
+        }
+
+        
+            var qr = new QRious({
+                element: document.getElementById('qr-code'),
+                size: 200,
+                value: generateRandomCode()
+            });
+
+            document.getElementById('code-display').innerText = "4-digit code: " + qr.value;
+        
+    </script>
+</body>
+</html>
